@@ -26,21 +26,9 @@ class HomePage extends StatelessWidget {
       
       child: Scaffold(
       
-        backgroundColor: Color.fromARGB(255, 252, 241, 223),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         
-        appBar: AppBar(
-          title: Center(child: Text('M E O W  C H A T S',
-                        style: GoogleFonts.notoSansLaoLooped(
-                          color: const Color.fromARGB(255, 160, 40, 80),
-                          fontSize: 22,
-                        )),
-          ),
-          backgroundColor: Colors.transparent,
-          foregroundColor: Colors.grey,
-          actions: [
-            IconButton(onPressed: logout, icon: Icon(Icons.logout),),
-          ],
-        ),
+       
       
         
         drawer: MyDrawer(),

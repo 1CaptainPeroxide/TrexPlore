@@ -147,7 +147,7 @@ void sendMessage() async {
         child: Column(
           crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
-            ChatBubble(message: data["message"], isCurrentUser: isCurrentUser)
+            ChatBubble(message: data["message"], isCurrentUser: isCurrentUser, )
           ],
         ));
   }

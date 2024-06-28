@@ -1,15 +1,14 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
 class UserTile extends StatelessWidget {
   final String text;
-
   final void Function()? onTap;
 
   const UserTile({
-    super.key, 
-    required this.text, 
+    Key? key,
+    required this.text,
     required this.onTap,
-    });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,35 +16,39 @@ class UserTile extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          gradient:  LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment(0.8, 1),
-            colors: <Color>[
-              Color(0xffEF32D9 ),
-              
-              
-              Color(0xff89FFFD),
-              Color(0xff96C93D),
-            ], // Gradient from https://learnui.design/tools/gradient-generator.html
-            tileMode: TileMode.mirror,
-          ),
+          color: Color.fromARGB(255, 240, 108, 158), // Light grey background
           borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.3),
+              spreadRadius: 1,
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
         margin: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
         padding: EdgeInsets.all(20),
-
-        child: Row(children: [
-          SizedBox(
-            height: 38,
-            child: Image.asset(
-                    'lib/icons/message.png',
-                    
-                  ),
-          ),
-          SizedBox(width: 20,),
-          //username
-          Text(text, style: TextStyle(fontSize: 18),),
-        ],)
+        child: Row(
+          children: [
+            SizedBox(
+              height: 38,
+              child: Image.asset(
+                'lib/icons/man.png',
+                // Placeholder image or user icon
+              ),
+            ),
+            SizedBox(width: 20),
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold, // Adjusted font weight
+                color: Colors.black, // Changed text color to black
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
