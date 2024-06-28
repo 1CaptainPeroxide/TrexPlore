@@ -11,4 +11,6 @@ Built with Flutter, Firebase, and Dart for a smooth and meowgical experience. Ch
 "Connect with your loved ones, anytime, anywhere."
 "Make new friends and meow about your day."
 
-![Screenshot 2024-06-28 152559](https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/0ccc4e66-dabc-4243-ac97-710a24ac3e9f)
+
+
+<img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/0ccc4e66-dabc-4243-ac97-710a24ac3e9f" width="180">
