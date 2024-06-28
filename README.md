@@ -20,8 +20,7 @@ Built with Flutter, Firebase, and Dart for a smooth and meowgical experience. Ch
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/305a65de-bf5e-4d77-8af4-65ba492ef415" width="180">
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/ff5f7a87-a629-4d58-aa45-b135ca71101b" width="180">
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/097e30a8-e801-455a-b491-6fe1a35af60e" width="180">
-
-
+<img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/929fc3c0-1a16-4fdb-9e30-cddcf262ba7b" width="180">
 
 
 
