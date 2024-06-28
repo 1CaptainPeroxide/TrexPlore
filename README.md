@@ -6,12 +6,23 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-MeowChat: Purrfectly connect with your friends! (Plays on the name and cat theme)
-Built with Flutter, Firebase, and Dart for a smooth and meowgical experience. Chat, connect, and have fun with your friends in a meowgnificent app!
-"Connect with your loved ones, anytime, anywhere."
-"Make new friends and meow about your day."
+Built a cross-platform mobile application to help users discover popular travel destinations and connect with fellow travelers
 
+– Frontend: Utilized Flutter and Dart, leveraging their comprehensive library of packages for front-end development to create a visually appealing and responsive mobile application
 
+– Authentication: Implemented user authentication and authorization using Firebase Authentication to ensure secure access to app features
+
+– Travel Discovery: Integrated Google Maps API and Places API, allowing users to search for and explore popular travel destinations within the app
+
+– User Interaction: Developed an in-app chat feature, enabling users to connect and communicate within the TrexPlore community
+
+– Real-Time Updates: Enabled users to see active users on the TrexPlore map, providing a dynamic and interactive experience
+
+– Database: Utilized Firebase Firestore for real-time storage and retrieval of user data and travel information, ensuring seamless interaction and data consistency
+
+– State Management: Leveraged GetX state management for efficient and scalable application architecture, ensuring optimal performance and maintainability
+
+– Tools and Technologies Used: Flutter, Firebase Firestore, Firebase Authentication, Google Maps API, Places API, GetX
 
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/0ccc4e66-dabc-4243-ac97-710a24ac3e9f" width="180">
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/1bbbb18e-a60a-4f66-8be1-21268f15c034" width="180">
