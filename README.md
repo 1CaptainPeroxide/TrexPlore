@@ -20,8 +20,6 @@ Built a cross-platform mobile application to help users discover popular travel 
 
 – Database: Utilized Firebase Firestore for real-time storage and retrieval of user data and travel information, ensuring seamless interaction and data consistency
 
-– State Management: Leveraged GetX state management for efficient and scalable application architecture, ensuring optimal performance and maintainability
-
 – Tools and Technologies Used: Flutter, Firebase Firestore, Firebase Authentication, Google Maps API, Places API, GetX
 
 <img src="https://github.com/1CaptainPeroxide/TrexPlore/assets/142601437/0ccc4e66-dabc-4243-ac97-710a24ac3e9f" width="180">
