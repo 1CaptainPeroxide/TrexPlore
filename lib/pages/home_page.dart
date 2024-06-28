@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
-import "package:meowchat/components/user_tile.dart";
-import "package:meowchat/pages/chat_page.dart";
-import 'package:meowchat/services/auth/auth_service.dart';
-import "package:meowchat/components/my_drawer.dart";
-import "package:meowchat/services/chat/chat_service.dart";
+import "package:trexplore/components/user_tile.dart";
+import "package:trexplore/pages/chat_page.dart";
+import 'package:trexplore/services/auth/auth_service.dart';
+import "package:trexplore/components/my_drawer.dart";
+import "package:trexplore/services/chat/chat_service.dart";
 
 class HomePage extends StatelessWidget {
    HomePage({super.key});

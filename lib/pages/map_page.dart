@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/services.dart'; // For rootBundle
-import 'dart:ui' as ui; // For image loading
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+
+import 'package:trexplore/components/map_style.dart'; // Import your map styles
 
 class MapPage extends StatefulWidget {
   @override
@@ -12,6 +15,8 @@ class MapPage extends StatefulWidget {
 class _MapPageState extends State<MapPage> {
   late GoogleMapController mapController;
   Set<Marker> markers = {};
+  final MapStyle mapStyle = MapStyle();
+  String currentMapStyle = '';
 
   @override
   void initState() {
@@ -40,11 +45,24 @@ class _MapPageState extends State<MapPage> {
     // Dummy data for markers (replace with your logic)
     List<UserLocation> activeUsers = [
       UserLocation(latitude: 37.42796133580664, longitude: -122.085749655962),
-      UserLocation(latitude: 37.37796133580664, longitude: -122.0987749655962),
+      UserLocation(latitude: 37.4219999, longitude: -122.0840575),
+      UserLocation(latitude: 37.420580, longitude: -122.083885),
+      UserLocation(latitude: 37.420510, longitude: -122.081927),
+      UserLocation(latitude: 37.423704, longitude: -122.086741),
+      UserLocation(latitude: 37.423035, longitude: -122.084245),
+      UserLocation(latitude: 37.421743, longitude: -122.083822),
+      UserLocation(latitude: 37.421012, longitude: -122.084378),
+      UserLocation(latitude: 37.420955, longitude: -122.082932),
+      UserLocation(latitude: 37.424802, longitude: -122.083124),
+      UserLocation(latitude: 37.425065, longitude: -122.081999),
+      UserLocation(latitude: 37.426500, longitude: -122.080327),
+      UserLocation(latitude: 37.426782, longitude: -122.081214),
+      UserLocation(latitude: 37.425602, longitude: -122.081508),
+      UserLocation(latitude: 37.426350, longitude: -122.081989),
     ];
 
     // Convert user locations to markers
-    return activeUsers.map((userLocation) {
+    markers = activeUsers.map((userLocation) {
       return Marker(
         markerId: MarkerId(userLocation.toString()),
         position: LatLng(userLocation.latitude, userLocation.longitude),
@@ -52,10 +70,17 @@ class _MapPageState extends State<MapPage> {
         infoWindow: InfoWindow(title: 'Active User'),
       );
     }).toSet();
+
+    return markers;
   }
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
+    _applyMapStyle();
+  }
+
+  void _applyMapStyle() {
+    mapController.setMapStyle(currentMapStyle);
   }
 
   @override
@@ -64,9 +89,7 @@ class _MapPageState extends State<MapPage> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         flexibleSpace: Container(
-        
           decoration: BoxDecoration(
-            
             gradient: LinearGradient(
               colors: [const Color.fromARGB(255, 255, 0, 85), Colors.white],
               begin: Alignment.topCenter,
@@ -83,16 +106,40 @@ class _MapPageState extends State<MapPage> {
           ),
         ),
         centerTitle: true,
-       
-        
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (value) {
+              setState(() {
+                switch (value) {
+                  case 'Aubergine':
+                    currentMapStyle = mapStyle.aubergine;
+                    break;
+                  case 'Retro':
+                    currentMapStyle = mapStyle.retro;
+                    break;
+                  case 'Dark':
+                    currentMapStyle = mapStyle.dark;
+                    break;
+                  case 'Night':
+                    currentMapStyle = mapStyle.night;
+                    break;
+                }
+                _applyMapStyle();
+              });
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(value: 'Aubergine', child: Text('Aubergine')),
+              PopupMenuItem(value: 'Retro', child: Text('Retro')),
+              PopupMenuItem(value: 'Dark', child: Text('Dark')),
+              PopupMenuItem(value: 'Night', child: Text('Night')),
+            ],
+          ),
+        ],
       ),
-      
       body: Center(
         child: Container(
-          
           margin: EdgeInsets.all(16),
           decoration: BoxDecoration(
-            
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
@@ -110,19 +157,12 @@ class _MapPageState extends State<MapPage> {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Container(
-              margin: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: GoogleMap(
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: CameraPosition(
-                  target: LatLng(37.42796133580664, -122.085749655962),
-                  zoom: 10.0,
-                ),
-                markers: markers,
+            child: GoogleMap(
+              onMapCreated: _onMapCreated,
+              markers: markers,
+              initialCameraPosition: CameraPosition(
+                target: LatLng(37.42796133580664, -122.085749655962),
+                zoom: 14.0,
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:meowchat/pages/login_page.dart';
-import 'package:meowchat/pages/register_page.dart';
+import 'package:trexplore/pages/login_page.dart';
+import 'package:trexplore/pages/register_page.dart';
 
 class LoginOrRegister extends StatefulWidget {
   const LoginOrRegister({Key? key}) : super(key: key);

@@ -3,9 +3,9 @@
 import "package:cloud_firestore/cloud_firestore.dart";
 import "package:flutter/material.dart";
 import "package:google_fonts/google_fonts.dart";
-import "package:meowchat/components/chat_bubble.dart";
-import "package:meowchat/services/auth/auth_service.dart";
-import "package:meowchat/services/chat/chat_service.dart";
+import "package:trexplore/components/chat_bubble.dart";
+import "package:trexplore/services/auth/auth_service.dart";
+import "package:trexplore/services/chat/chat_service.dart";
 
 class ChatPage extends StatefulWidget {
   final String receiverEmail;
@@ -75,31 +75,51 @@ void sendMessage() async {
   Widget build(BuildContext context) {
     return  Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage("lib/icons/chatbg.png"),
+        
+        image: DecorationImage(image: AssetImage("lib/icons/bgchat.jpg",
+        
+        ),
         fit: BoxFit.cover,),
       ),
       child: Scaffold(
+        
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          elevation: 19,
-          title: Container(
-            decoration: BoxDecoration(
-              
-              borderRadius: BorderRadius.all(Radius.circular(9))),
-            padding: EdgeInsets.all(27),
-            
-            child: Text(widget.receiverEmail,
-             style: GoogleFonts.robotoSlab(
-              fontWeight: FontWeight.bold,
-              
-              
-            ),
-
-            ),
-          ),
-        ),
+          centerTitle: true,
+  elevation: 10, // Add a shadow with elevation
+  backgroundColor: Color.fromARGB(255, 167, 34, 78), // Pink background color
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.vertical(
+      bottom: Radius.circular(16), // Rounded corners for top of the app bar
+    ),
+    side: BorderSide(
+      color: Colors.white.withOpacity(0.2), // Border color
+      width: 1, // Border width
+    ),
+  ),
+  leading: IconButton(
+    icon: Icon(Icons.arrow_back_ios_rounded), // Back button icon
+    onPressed: () {
+      Navigator.pop(context); // Example of a back button functionality
+    },
+    color: Colors.white,
+  ),
+  title: Container(
+    padding: EdgeInsets.all(20),
+    child: Text(
+      widget.receiverEmail,
+      style: GoogleFonts.robotoSlab(
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+        color: Colors.white,
+      ),
+    ),
+  ),
+),
       
-        body: Column(children: [
+        body: Column(
+          
+          children: [
           Expanded(child: 
           _buildMessageList(),
       
@@ -143,6 +163,7 @@ void sendMessage() async {
       var alignment = isCurrentUser ? Alignment.centerRight :Alignment.centerLeft;
 
       return Container(
+        padding: EdgeInsets.fromLTRB(2, 8, 2, 0),
         alignment: alignment,
         child: Column(
           crossAxisAlignment: isCurrentUser ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -165,13 +186,13 @@ void sendMessage() async {
                     padding:  EdgeInsets.symmetric(horizontal: 25.0),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.grey[200],
+                        color: Color.fromARGB(255, 238, 238, 238),
                         border:
-                            Border.all(color: Color.fromARGB(255, 96, 246, 246)),
+                            Border.all(color: Color.fromARGB(255, 0, 0, 0)),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.only(left: 20.0),
+                        padding: EdgeInsets.only(left: 18.0),
                         child: TextField(
                           obscureText: false,
       

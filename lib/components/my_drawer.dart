@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meowchat/pages/home_page.dart';
-import 'package:meowchat/pages/main_page.dart';
-import 'package:meowchat/pages/map_page.dart';
-import 'package:meowchat/services/auth/auth_service.dart';
+import 'package:trexplore/pages/home_page.dart';
+import 'package:trexplore/pages/main_page.dart';
+import 'package:trexplore/pages/map_page.dart';
+import 'package:trexplore/services/auth/auth_service.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
@@ -245,6 +245,13 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
                 onTap: () {},
               ),
+              SizedBox(height: 40,),
+              Text(
+                  'Created by MOHIT',
+                  style: GoogleFonts.raleway(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),),
             ],
           ),
         ),

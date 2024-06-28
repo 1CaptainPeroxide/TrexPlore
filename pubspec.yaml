@@ -1,4 +1,4 @@
-name: meowchat
+name: trexplore
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -40,6 +40,8 @@ dependencies:
   google_fonts: ^6.1.0
   cloud_firestore: ^4.14.0
   google_maps_flutter: ^2.5.3
+  location: ^6.0.2
+  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:

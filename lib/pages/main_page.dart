@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meowchat/components/my_drawer.dart';
-import 'package:meowchat/pages/home_page.dart';
+import 'package:trexplore/components/my_drawer.dart';
+import 'package:trexplore/pages/home_page.dart';
 
 class MainPage extends StatefulWidget {
   @override

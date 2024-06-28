@@ -1,6 +1,6 @@
   import 'package:flutter/material.dart';
-  import 'package:meowchat/services/auth/auth_gate.dart';
-  import 'package:meowchat/firebase_options.dart';
+  import 'package:trexplore/services/auth/auth_gate.dart';
+  import 'package:trexplore/firebase_options.dart';
   import 'package:firebase_core/firebase_core.dart';
 
   void main() async {
